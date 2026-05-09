@@ -14,7 +14,7 @@ Packager: Peter Leinchen for SFOS <peterleinchen@t-online.de>
 # Fedora:
 BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
 BuildRequires: zlib-devel, gettext
-BuildRequires: libidn2-devel
+BuildRequires: pkgconfig(libidn-devel)
 # BuildRequires: openssl-devel
 # BuildRequires: bzip2-devel
 
