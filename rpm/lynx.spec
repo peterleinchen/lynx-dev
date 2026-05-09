@@ -9,11 +9,12 @@ Source: https://invisible-island.net/archives/lynx/lynx%{version}.tgz
 URL: https://lynx.invisible-island.net
 Provides: webclient >= 0.0
 Provides: text-www-browser >= 0.0
+Packager: Peter Leinchen for SFOS <peterleinchen@t-online.de>
 
 # Fedora:
-BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
-BuildRequires: zlib-devel, gettext
-BuildRequires: libidn-devel
+BuildRequires: pkgconfig, ncurses >= 5.3-5,
+BuildRequires: zlib, gettext
+BuildRequires: libidn-ß
 # BuildRequires: openssl-devel
 # BuildRequires: bzip2-devel
 
@@ -44,7 +45,6 @@ HTTP, FTP, WAIS, and NNTP servers.
 	--target %{_target_platform} \
 	--prefix=%{_prefix} \
 	--bindir=%{_bindir} \
-	--program-suffix=-dev \
 	--datadir=%{lynx_doc} \
 	--libdir=%{lynx_etc} \
 	--mandir=%{_mandir} \
@@ -70,7 +70,7 @@ HTTP, FTP, WAIS, and NNTP servers.
 	--enable-nsl-fork \
 	--enable-syslog \
 	--enable-warnings \
-	--with-screen=ncursesw6dev \
+	--with-screen=ncursesw \
 	--with-ssl
 make \
 	docdir=%{lynx_doc}
@@ -93,7 +93,7 @@ strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 %find_lang %{name}
 
 %files -f %{name}.lang
-%defattr(-,root,root,-)
+# %%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_mandir}/*/*
 %{lynx_doc}/*
