@@ -12,9 +12,9 @@ Provides: text-www-browser >= 0.0
 Packager: Peter Leinchen for SFOS <peterleinchen@t-online.de>
 
 # Fedora:
-BuildRequires: pkgconfig, ncurses >= 5.3-5,
-BuildRequires: zlib, gettext
-BuildRequires: libidn
+BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
+BuildRequires: zlib-devel, gettext
+BuildRequires: libidn-devel
 # BuildRequires: openssl-devel
 # BuildRequires: bzip2-devel
 
