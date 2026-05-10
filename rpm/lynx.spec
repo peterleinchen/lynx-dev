@@ -20,7 +20,7 @@ BuildRequires: zlib-devel, gettext
 
 # SuSE:
 # BuildRequires: libbz2-devel
- BuildRequires: libopenssl-1_1-devel
+BuildRequires: libopenssl-1_1-devel
 # or
 # BuildRequires: libopenssl-3-devel                   
 
