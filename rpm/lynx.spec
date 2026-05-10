@@ -5,7 +5,7 @@ Version: 2.9.2
 Release: 1
 License: GPLv2
 Group: Applications/Internet
-Source: https://invisible-island.net/archives/lynx/lynx%{version}.tgz
+Source: https://invisible-island.net/archives/lynx/lynx-%{version}.tgz
 URL: https://lynx.invisible-island.net
 Provides: webclient >= 0.0
 Provides: text-www-browser >= 0.0
