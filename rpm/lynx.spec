@@ -20,7 +20,8 @@ BuildRequires: zlib-devel, gettext
 
 # SuSE:
 # BuildRequires: libbz2-devel
- BuildRequires: libopenssl-1_1-devel, or
+ BuildRequires: libopenssl-1_1-devel
+# or
 # BuildRequires: libopenssl-3-devel                   
 
 Requires: brotli, gzip, bzip2, tar, zip, unzip
@@ -71,7 +72,9 @@ HTTP, FTP, WAIS, and NNTP servers.
 	--enable-syslog \
 	--enable-warnings \
 	--with-screen=ncursesw \
-	--with-ssl
+	--with-ssl \
+ --without-idn \
+ --disable-idna
 make \
 	docdir=%{lynx_doc}
 
