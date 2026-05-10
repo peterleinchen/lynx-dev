@@ -14,13 +14,13 @@ Packager: Peter Leinchen for SFOS <peterleinchen@t-online.de>
 # Fedora:
 BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
 BuildRequires: zlib-devel, gettext
-BuildRequires: pkgconfig(libidn-devel)
+## BuildRequires: libidn-devel
 # BuildRequires: openssl-devel
 # BuildRequires: bzip2-devel
 
 # SuSE:
 # BuildRequires: libbz2-devel
-# BuildRequires: libopenssl-1_1-devel, or
+ BuildRequires: libopenssl-1_1-devel, or
 # BuildRequires: libopenssl-3-devel                   
 
 Requires: brotli, gzip, bzip2, tar, zip, unzip
