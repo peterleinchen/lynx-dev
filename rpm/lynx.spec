@@ -39,7 +39,7 @@ HTTP, FTP, WAIS, and NNTP servers.
 %prep
 
 %define debug_package %{nil}
-%setup -q -n lynx%{version}
+%setup -q -n lynx-%{version}
 
 %build
 %configure \
