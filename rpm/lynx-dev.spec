@@ -6,7 +6,7 @@ Release: 25
 License: GPL-2.0-only
 Group: Applications/Internet
 # Source: https://invisible-island.net/archives/lynx/lynx%%{version}.tgz
-Source: %{name}%{version}.tgz
+Source: %{name}-%{version}.tgz
 URL: https://lynx.invisible-island.net
 Provides: webclient >= 0.0
 Provides: text-www-browser >= 0.0
@@ -74,8 +74,8 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 	--enable-warnings \
 	--with-screen=ncursesw6dev \
 	--with-ssl \
-        --without-idn \
-        --disable-idna
+ --without-idn \
+ --disable-idna
 make \
 	docdir=%{lynx_doc}
 
