@@ -2,8 +2,8 @@
 
 git push origin -d v2.9.2
 git tag -d v2.9.2
-git pull origin SFOS
+git pull origin sfos
 git tag v2.9.2
 ## works only foar annotated tags: git push origin main --follow-tags
-git push origin SFOS
+git push origin sfos
 git push origin --tags
