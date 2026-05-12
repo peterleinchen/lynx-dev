@@ -1,5 +1,6 @@
 #!/bin/sh
 
+tag=v2.9.2-dev
 git push origin -d v2.9.2-dev
 git tag -d v2.9.2-dev
 git pull origin sfos-dev
