@@ -6,4 +6,5 @@ git pull origin sfos-dev
 git tag v2.9.2-dev
 ## works only foar annotated tags: git push origin main --follow-tags
 git push origin sfos-dev
-git push origin --tags
+# git push origin --tags
+git push origin v2.9.2-dev
