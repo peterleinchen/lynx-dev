@@ -5,8 +5,8 @@ Version: 2.9.2
 Release: 25
 License: GPL-2.0-only
 Group: Applications/Internet
-# Source: https://invisible-island.net/archives/lynx/lynx%{version}.tgz
-Source: %{name}-%{version}.tgz
+# Source: https://invisible-island.net/archives/lynx/lynx%%{version}.tgz
+Source: %{name}%{version}.tgz
 URL: https://lynx.invisible-island.net
 Provides: webclient >= 0.0
 Provides: text-www-browser >= 0.0
@@ -27,10 +27,11 @@ BuildRequires: bzip2-devel
 Requires: brotli, gzip, bzip2, tar, zip, unzip, zstd
 
 %description
-Lynx is a fully-featured World Wide Web (WWW) client for users running cursor-addressable, \
-character-cell display devices.  It is very fast and easy to use.  It will display HTML \
-documents containing links to files residing on the local system, as well as files residing \
-on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP servers.
+Lynx is a fully-featured World Wide Web (WWW) client for users \
+running cursor-addressable, character-cell display devices.  
+It is very fast and easy to use.  It will display HTML documents containing \
+links to files residing on the local system, as well as \
+files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP servers.
 
 %define lynx_doc %{_defaultdocdir}/%{name}
 %define lynx_etc %{_sysconfdir}/%{name}
