@@ -96,7 +96,7 @@ strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 %find_lang %{name}
 
 %files -f %{name}.lang
-%defattr(-,root,root,-)
+# %%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_mandir}/*/*
 %{lynx_doc}/*
