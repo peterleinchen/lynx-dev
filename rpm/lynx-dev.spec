@@ -1,4 +1,4 @@
-⁹# $LynxId: lynx.spec,v 1.122 2026/04/22 00:04:41 tom Exp $
+# $LynxId: lynx.spec,v 1.122 2026/04/22 00:04:41 tom Exp $
 Summary: A text-based Web browser
 Name: lynx-dev
 Version: 2.9.2
