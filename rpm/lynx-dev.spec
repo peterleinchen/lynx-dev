@@ -1,4 +1,4 @@
-# $LynxId: lynx.spec,v 1.122 2026/04/22 00:04:41 tom Exp $
+⁹# $LynxId: lynx.spec,v 1.122 2026/04/22 00:04:41 tom Exp $
 Summary: A text-based Web browser
 Name: lynx-dev
 Version: 2.9.2
@@ -71,7 +71,7 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 	--enable-nsl-fork \
 	--enable-syslog \
 	--enable-warnings \
-	--with-screen=ncursesw6dev \
+	--with-screen=ncursesw \
 	--with-ssl \
  --without-idn \
  --disable-idna
