@@ -71,7 +71,7 @@ HTTP, FTP, WAIS, and NNTP servers.
 	--enable-nsl-fork \
 	--enable-syslog \
 	--enable-warnings \
-	--with-screen=ncursesw6dev \
+	--with-screen=ncursesw \
 	--with-ssl \
 	--without-idn \
 	--disable-idna
