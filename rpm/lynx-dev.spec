@@ -6,7 +6,7 @@ Release: 25
 License: GPL-2.0-only
 Group: Applications/Internet
 # Source: https://invisible-island.net/archives/lynx/lynx%%{version}.tgz
-Source: %{name}-%{version}.%{release}.tgz
+Source: %{name}-%{version}-%{release}.tgz
 URL: https://lynx.invisible-island.net
 Provides: webclient >= 0.0
 Provides: text-www-browser >= 0.0
@@ -38,7 +38,7 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 
 %prep
 %define debug_package %{nil}
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}-%{release}
 
 %build
 %configure \
