@@ -15,7 +15,7 @@ Packager: Peter Leinchen (for SFOS) <peterleinchen@t-online.de>
 # Fedora:
 BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
 BuildRequires: zlib-devel, gettext
-# BuildRequires: libidn-devel
+## BuildRequires: libidn-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
 
@@ -27,11 +27,12 @@ BuildRequires: bzip2-devel
 Requires: brotli, gzip, bzip2, tar, zip, unzip, zstd
 
 %description
-Lynx is a fully-featured World Wide Web (WWW) client for users \
-running cursor-addressable, character-cell display devices.  
-It is very fast and easy to use.  It will display HTML documents containing \
-links to files residing on the local system, as well as \
-files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP servers.
+Lynx is a fully-featured World Wide Web (WWW) client for users running cursor-addressable, \
+character-cell display devices. 
+It is very fast and easy to use. 
+It will display HTML documents containing links to files residing on the local system, \
+as well as files residing on remote systems running Gopher, HTTP, FTP, WAIS, \
+and NNTP servers.
 
 %define lynx_doc %{_defaultdocdir}/%{name}
 %define lynx_etc %{_sysconfdir}/%{name}
@@ -73,8 +74,8 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 	--enable-warnings \
 	--with-screen=ncursesw \
 	--with-ssl \
- --without-idn \
- --disable-idna
+    --without-idn \
+    --disable-idna
 make \
 	docdir=%{lynx_doc}
 
@@ -96,7 +97,7 @@ strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 %find_lang %{name}
 
 %files -f %{name}.lang
-# %%defattr(-,root,root,-)
+## %%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_mandir}/*/*
 %{lynx_doc}/*
