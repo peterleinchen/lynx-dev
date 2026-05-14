@@ -39,7 +39,7 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 
 %prep
 %define debug_package %{nil}
-%setup -q -n %{name}-%{version}rel%{devel}
+%setup -q -n %{name}-%{version}
 
 %build
 %configure \
