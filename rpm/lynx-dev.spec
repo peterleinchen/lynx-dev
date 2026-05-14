@@ -35,10 +35,11 @@ files residing on remote systems running Gopher, HTTP, FTP, WAIS, and NNTP serve
 
 %define lynx_doc %{_defaultdocdir}/%{name}
 %define lynx_etc %{_sysconfdir}/%{name}
+%define devel %{release}
 
 %prep
 %define debug_package %{nil}
-%setup -q -n %{name}-%{version}rel%{release}
+%setup -q -n %{name}-%{version}.%{devel}
 
 %build
 %configure \
