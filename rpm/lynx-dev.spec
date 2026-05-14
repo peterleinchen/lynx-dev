@@ -3,7 +3,7 @@ Summary: A text-based Web browser
 Name: lynx-dev
 Version: 2.9.2
 Release: 25
-%define devel %{release}
+%define devel 25
 License: GPL-2.0-only
 Group: Applications/Internet
 # Source: https://invisible-island.net/archives/lynx/lynx%%{version}.tgz
