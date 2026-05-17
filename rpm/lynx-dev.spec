@@ -15,7 +15,7 @@ Packager: Peter Leinchen (for SFOS) <peterleinchen@t-online.de>
 # Fedora:
 BuildRequires: pkgconfig, ncurses-devel >= 5.3-5,
 BuildRequires: zlib-devel, gettext
-## BuildRequires: libidn-devel
+BuildRequires: libidn-devel
 BuildRequires: openssl-devel
 BuildRequires: bzip2-devel
 
@@ -73,9 +73,9 @@ and NNTP servers.
 	--enable-syslog \
 	--enable-warnings \
 	--with-screen=ncursesw \
-	--with-ssl \
-    --without-idn \
-    --disable-idna
+	--with-ssl 
+#    --without-idn \
+#    --disable-idna
 make \
 	docdir=%{lynx_doc}
 
