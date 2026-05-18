@@ -115,16 +115,19 @@ strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 %defattr(-,root,root,-)
 %{_mandir}/*/*
 %dir %{lynx_doc}
+
+# Use wildcards to safely pull in whatever documentation files actually exist
 %{lynx_doc}/CHANGES*
 %{lynx_doc}/COPYHEADER*
 %{lynx_doc}/COPYING*
-%{lynx_doc}/INSTALLATION
-%{lynx_doc}/PROBLEM_DETAILS
-%{lynx_doc}/README
+%{lynx_doc}/README*
+
+# Directories containing help layout frameworks
 %{lynx_doc}/docs/
 %{lynx_doc}/lynx_help/
 %{lynx_doc}/samples/
 %{lynx_doc}/test/
+
 
 %changelog
 * Mon May 18 2026 Peter Leinchen (for SFOS) <peterleinchen@t-online.de>
