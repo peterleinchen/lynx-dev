@@ -45,9 +45,9 @@ man pages, and sample configurations for the lynx-dev web browser.
 
 %define lynx_doc %{_defaultdocdir}/%{name}
 %define lynx_etc %{_sysconfdir}/%{name}
+%define debug_package %{nil}
 
 %prep
-%define debug_package %{nil}
 %setup -q -n %{name}-%{version}
 
 %build
