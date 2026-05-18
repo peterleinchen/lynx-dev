@@ -34,6 +34,15 @@ It will display HTML documents containing links to files residing on the local s
 as well as files residing on remote systems running Gopher, HTTP, FTP, WAIS, \
 and NNTP servers.
 
+%package doc
+Summary:    Help files and documentation for the lynx-dev text browser
+Group:      Documentation
+Requires:   %{name} = %{version}-%{release}
+
+%description doc
+This package contains the interactive HTML help files, user guides, 
+man pages, and sample configurations for the lynx-dev web browser.
+
 %define lynx_doc %{_defaultdocdir}/%{name}
 %define lynx_etc %{_sysconfdir}/%{name}
 
@@ -43,68 +52,83 @@ and NNTP servers.
 
 %build
 %configure \
-	--target %{_target_platform} \
-	--prefix=%{_prefix} \
-	--bindir=%{_bindir} \
-	--program-suffix=-dev \
-	--datadir=%{lynx_doc} \
-	--libdir=%{lynx_etc} \
-	--mandir=%{_mandir} \
-	--sysconfdir=%{lynx_etc} \
-	--with-cfg-path=%{lynx_etc}:%{lynx_doc}/samples \
-	--with-textdomain=%{name} \
-	--enable-cgi-links \
-	--enable-change-exec \
-	--enable-charset-choice \
-	--enable-default-colors \
-	--enable-exec-links \
-	--enable-exec-scripts \
-	--enable-externs \
-	--enable-font-switch \
-	--enable-gzip-help \
-	--enable-htmlized-cfg \
-	--enable-internal-links \
-	--enable-ipv6 \
-	--enable-kbd-layout \
-	--enable-local-docs \
-	--enable-nested-tables \
-	--enable-nls \
-	--enable-nsl-fork \
-	--enable-syslog \
-	--enable-warnings \
-	--with-screen=ncursesw \
-	--with-ssl 
+        --target %{_target_platform} \
+        --prefix=%{_prefix} \
+        --bindir=%{_bindir} \
+        --program-suffix=-dev \
+        --datadir=%{lynx_doc} \
+        --libdir=%{lynx_etc} \
+        --mandir=%{_mandir} \
+        --sysconfdir=%{lynx_etc} \
+        --with-cfg-path=%{lynx_etc}:%{lynx_doc}/samples \
+        --with-textdomain=%{name} \
+        --enable-cgi-links \
+        --enable-change-exec \
+        --enable-charset-choice \
+        --enable-default-colors \
+        --enable-exec-links \
+        --enable-exec-scripts \
+        --enable-externs \
+        --enable-font-switch \
+        --enable-gzip-help \
+        --enable-htmlized-cfg \
+        --enable-internal-links \
+        --enable-ipv6 \
+        --enable-kbd-layout \
+        --enable-local-docs \
+        --enable-nested-tables \
+        --enable-nls \
+        --enable-nsl-fork \
+        --enable-syslog \
+        --enable-warnings \
+        --with-screen=ncursesw \
+        --with-ssl 
 #    --without-idn \
 #    --disable-idna
 make \
-	docdir=%{lynx_doc}
+        docdir=%{lynx_doc}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 chmod -x samples/mailto-form.pl
 
 make install-full \
-	DESTDIR=$RPM_BUILD_ROOT \
-	docdir=%{lynx_doc}
+        DESTDIR=$RPM_BUILD_ROOT \
+        docdir=%{lynx_doc}
 
 cat >>$RPM_BUILD_ROOT%{lynx_etc}/lynx.cfg <<EOF
 DEFAULT_INDEX_FILE:http://www.google.com/
 LOCALE_CHARSET:TRUE
 EOF
 
+# Fixed path to account for the --program-suffix=-dev setting
 strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 %find_lang %{name}
 
 %files -f %{name}.lang
-## %%defattr(-,root,root,-)
 %{_bindir}/%{name}
-%{_mandir}/*/*
-%{lynx_doc}/*
 %config(noreplace) %{lynx_etc}/*.cfg
 %config(noreplace) %{lynx_etc}/*.lss
 
+%files doc
+%defattr(-,root,root,-)
+%{_mandir}/*/*
+%dir %{lynx_doc}
+%{lynx_doc}/CHANGES*
+%{lynx_doc}/COPYHEADER*
+%{lynx_doc}/COPYING*
+%{lynx_doc}/INSTALLATION
+%{lynx_doc}/PROBLEM_DETAILS
+%{lynx_doc}/README
+%{lynx_doc}/docs/
+%{lynx_doc}/lynx_help/
+%{lynx_doc}/samples/
+%{lynx_doc}/test/
+
 %changelog
+* Mon May 18 2026 Peter Leinchen (for SFOS) <peterleinchen@t-online.de>
+- Adapted for SFOS OBS and split out large help files, test suites, and man pages into a separate doc package.
 
 * Tue Apr 21 2026 Thomas E. Dickey
 - testing lynx 2.9.2-25
