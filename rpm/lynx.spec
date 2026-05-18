@@ -118,6 +118,7 @@ strip $RPM_BUILD_ROOT%{_bindir}/%{name}
 %{lynx_doc}/CHANGES*
 %{lynx_doc}/COPYHEADER*
 %{lynx_doc}/COPYING*
+%{lynx_doc}/PROBLEM*
 %{lynx_doc}/README*
 
 # Directories containing help layout frameworks
