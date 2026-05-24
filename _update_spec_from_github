@@ -2,7 +2,7 @@
 
 branch=sfos-dev
 version=2.9.2
-release=25
+release=26
 
 if [ -z $release ]; then tag=v"$version"; else tag=v"$version"rel"$release"; fi
 # delete the tags from origin and locally
