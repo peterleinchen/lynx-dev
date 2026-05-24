@@ -5,5 +5,4 @@
   <param name="debian">N</param>
   <param name="dumb">N</param>
  </service>
- <service name="download_files"/>
 </services>
