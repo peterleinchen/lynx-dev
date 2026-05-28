@@ -1,7 +1,7 @@
 # $LynxId: lynx.spec,v 1.91 2024/05/31 22:09:16 tom Exp $
 Summary: A text-based Web browser
 Name: lynx
-Version: 2.9.2
+Version: 2.9.3
 Release: 1
 License: GPLv2
 Group: Applications/Internet
