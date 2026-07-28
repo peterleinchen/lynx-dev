@@ -1,8 +1,8 @@
 #!/bin/sh
 
 branch=sfos-dev
-version=2.9.3
-release=1
+version=2.9.3a
+release=2
 
 if [ -z $release ]; then tag=v"$version"; else tag=v"$version"rel"$release"; fi
 # delete the tags from origin and locally
