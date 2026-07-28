@@ -3,11 +3,13 @@ git status
 read -p 'All clean?'
 
 git switch master
-git pull master
+git pull upstream
+read -p 'Pull Succeeded?'
 
-read -p 'Succeeded?'
+git push master
+read -p 'Push Succeeded?'
+
 git switch sfos-dev
-
 read -n 1 -s - -p 'Now rebase master onto sfos-dev?' theKeyPressed
 case "theKeyPressed" in 
   [yY])
