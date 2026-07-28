@@ -1,0 +1,17 @@
+git switch sfos-dev
+git status
+read -p 'All clean?'
+
+git switch master
+git pull master
+
+read -p 'Succeeded?'
+git switch sfos-dev
+
+read -n 1 -s - -p 'Now rebase master onto sfos-dev?' theKeyPressed
+case "theKeyPressed" in 
+  [yY])
+    git switch sfos-dev
+    git rebase master
+    ;;
+esac
